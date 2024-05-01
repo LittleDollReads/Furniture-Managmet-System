@@ -10,11 +10,11 @@ package object.project;
  */
 public class Address {
     
-    private int streeNumt, zip;
+    private String streeNumt, zip;
     
     private String streetName, city, state;
     
-    public Address(int streetNum, String streetname, String city, String State, int zip) {
+    public Address(String streetNum, String streetname, String city, String State, String zip) {
         setStreetNum(streeNumt);
         setStreetName(streetName);
         setCity(city);
@@ -24,14 +24,14 @@ public class Address {
     }
     
     public Address() {
-        this(123, "Main St", "New York", "New York", 11201);
+        this("123", "Main St", "New York", "New York", "11201");
     }
     
-    public void setStreetNum(int value) { 
+    public void setStreetNum(String value) { 
         streeNumt = value;
     }
     
-    public int getStreetNum() {
+    public String getStreetNum() {
         return streeNumt;
     }
     
@@ -59,11 +59,11 @@ public class Address {
         return state;
     }
     
-    public void setZip(int value) { 
+    public void setZip(String value) { 
         zip = value;
     }
     
-    public int getZip() {
+    public String getZip() {
         return zip;
     }
     
