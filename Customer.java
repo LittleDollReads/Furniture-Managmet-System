@@ -10,11 +10,11 @@ import java.util.Scanner;
  *
  * @author green
  */
-public class Customer  {
+public class Customer extends FurnitureGUI {
     
     public String Name, streetName, city, state;
     
-    public int day,month,year, streetNum, zip;
+    public String day,month,year, streetNum, zip;
     
     // Date of Birth 
     
@@ -31,14 +31,18 @@ public class Customer  {
         DOB = new Date[1];
         for(int i=0; i<DOB.length; i++) { 
             
-            System.out.println("Enter Day of Birth:");
-            day = in.nextInt();
+            //System.out.println("Enter Day of Birth:");
+            //day = in.nextInt();
+            day= FurnitureGUI.Day.getText();
             
-            System.out.println("Enter Month of Birth:");
-            month = in.nextInt();
+            month= FurnitureGUI.Month.getText();
             
-            System.out.println("Enter Year of Birth:");
-            year = in.nextInt();
+            year= FurnitureGUI.Year.getText();
+            //System.out.println("Enter Month of Birth:");
+            //month = in.nextInt();
+            
+            //System.out.println("Enter Year of Birth:");
+            //year = in.nextInt();
             
             DOB[i] = new Date(day,month,year);
         } 
@@ -47,7 +51,7 @@ public class Customer  {
         for(int i=0; i<Address.length; i++) {
         
             System.out.println("Enter street num:");
-            streetNum = in.nextInt();
+            streetNum = in.nextLine();
             
             System.out.println("Enter street name:");
             streetName = in.nextLine();
@@ -59,7 +63,7 @@ public class Customer  {
             state = in.nextLine();
             
             System.out.println("Enter zip code:");
-            zip = in.nextInt();
+            zip = in.nextLine();
             
             Address[i] = new Address(streetNum,streetName,city, state,zip);
         }
