@@ -10,9 +10,9 @@ package object.project;
  */
 public class Date {
     
-    private int Day, Month, Year;
+    private String Day, Month, Year;
     
-    public Date(int Day, int Month, int Year) {
+    public Date(String Day, String Month, String Year) {
         setDay(Day);
         setMonth(Month);
         setYear(Year); 
@@ -20,30 +20,30 @@ public class Date {
     }
     
     public Date() {
-        this(1,1,2000);
+        this("1","1","2000");
     }
     
-    public void setDay(int value) { 
+    public void setDay(String value) { 
         Day = value;
     }
     
-    public int getDay() {
+    public String getDay() {
         return Day;
     }
     
-    public void setMonth(int value) { 
+    public void setMonth(String value) { 
         Month = value;
     }
     
-    public int getMonth() {
+    public String getMonth() {
         return Month;
     }
     
-    public void setYear(int value) { 
+    public void setYear(String value) { 
         Year = value;
     }
     
-    public int getYear() {
+    public String getYear() {
         return Year;
     }
     
@@ -52,5 +52,6 @@ public class Date {
         return "Day: " + Day + " \n Month: " + Month + " \n Year: " + Year;
     }
     
+   
    
 }
