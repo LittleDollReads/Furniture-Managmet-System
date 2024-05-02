@@ -12,6 +12,11 @@ import javax.swing.JOptionPane;
  */
 public class FurnitureGUI extends javax.swing.JFrame {
 
+    
+    String customerName , day , month, year, streetNum, streetName, city, state , zipCode;
+    
+    
+    
     /**
      * Creates new form FurnitureGUI
      */
@@ -20,6 +25,7 @@ public class FurnitureGUI extends javax.swing.JFrame {
         CustomerFrame.setVisible(false);
         ItemFrame.setVisible(false);
         OrderFrame.setVisible(false);
+        
         
          
        
@@ -111,6 +117,7 @@ public class FurnitureGUI extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         SearchResults = new javax.swing.JTextArea();
         EnterInfo = new javax.swing.JFormattedTextField();
+        DisplayOrders = new javax.swing.JButton();
 
         CustomerFrame.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         CustomerFrame.setPreferredSize(new java.awt.Dimension(521, 364));
@@ -183,7 +190,7 @@ public class FurnitureGUI extends javax.swing.JFrame {
                                         .addComponent(jLabel9)
                                         .addGap(18, 18, 18)
                                         .addComponent(Day, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGap(18, 18, 18)
                                         .addComponent(Month, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(CustomerFrameLayout.createSequentialGroup()
                                         .addGroup(CustomerFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -667,6 +674,13 @@ public class FurnitureGUI extends javax.swing.JFrame {
 
         EnterInfo.setText("Enter Information");
 
+        DisplayOrders.setText("Display Orders");
+        DisplayOrders.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DisplayOrdersMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -697,6 +711,10 @@ public class FurnitureGUI extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(106, 106, 106)
+                        .addComponent(DisplayOrders)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -725,7 +743,9 @@ public class FurnitureGUI extends javax.swing.JFrame {
                         .addComponent(EnterInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
-                .addComponent(Search)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Search)
+                    .addComponent(DisplayOrders))
                 .addGap(22, 22, 22))
         );
 
@@ -767,8 +787,7 @@ public class FurnitureGUI extends javax.swing.JFrame {
     private void SearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SearchMouseClicked
         // TODO add your handling code here:
         if (CustomerSearch.isSelected() ) {
-            System.out.print("Custoomer");
-            //EnterInfo.setText("Enter Customer Name");
+            
         }
         
         if (ItemSearch.isSelected() ) {
@@ -846,57 +865,70 @@ public class FurnitureGUI extends javax.swing.JFrame {
     private void CreateCustomerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CreateCustomerMouseClicked
         
         
-        String customerName = CustomerName.getText(), day = Day.getText(), month = Month.getText(), year = Year.getText(), streetNum = StreetNumber.getText(), streetName = StreetName.getText(), city = City.getText(), state = State.getText(), zipCode = ZipCode.getText();
-
         //verify that text is entered into all spots
         
         if (CustomerName.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please Enter a Customer Name");
             CustomerInfoBox.setText("");
-        } 
+        } else {
+            customerName = CustomerName.getText();
+        }
         
         if (Day.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please Enter a Day");
             CustomerInfoBox.setText("");
+        } else {
+            day = Day.getText();
         }
         
         if (Month.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please Enter a Month");
             CustomerInfoBox.setText("");
+        } else {
+            month = Month.getText();
         }
         
         if (Year.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please Enter a Year");
             CustomerInfoBox.setText("");
+        }else {
+            year = Year.getText();
         }
         
         if (StreetNumber.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please Enter a street number");
             CustomerInfoBox.setText("");
+        } else {
+            streetNum = StreetNumber.getText();
         }
         
         if (StreetName.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please Enter a street name");
             CustomerInfoBox.setText("");
+        }else {
+            streetName = StreetName.getText();
         }
         
         if (City.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please Enter a city");
             CustomerInfoBox.setText("");
+        } else {
+            city = City.getText();
         }
         
         if (State.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please Enter a state");
             CustomerInfoBox.setText("");
+        } else {
+            state = State.getText();
         }
         
         if (ZipCode.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please Enter a zip code");
             CustomerInfoBox.setText("");
+        }else {
+            zipCode = ZipCode.getText();
         }
-        
-        
-        
         
         // numbers only for date, street num, zip code
         boolean flag = true;
@@ -981,11 +1013,15 @@ public class FurnitureGUI extends javax.swing.JFrame {
 
         flag = true;
         
-        
+        int dayInt = Integer.parseInt(Day.getText());
+        int monthInt = Integer.parseInt(Month.getText());
+        int yearInt = Integer.parseInt(Year.getText());
+        int streetNumInt = Integer.parseInt(StreetNumber.getText());
+        int zipCodeInt = Integer.parseInt(ZipCode.getText());
         
         CustomerInfoBox.setText(CustomerName.getText() + "\n" + StreetNumber.getText() + " " + StreetName.getText() + "\n" + City.getText() + " , " + State.getText() + " " + ZipCode.getText() );
         
-        
+        Customer customer = new Customer(customerName, dayInt, monthInt, yearInt, streetNumInt, streetName, city, state, zipCodeInt);
         
         //have this part actually create a customer with the displayed information
         
@@ -1075,6 +1111,8 @@ public class FurnitureGUI extends javax.swing.JFrame {
          if (ChairsList.getText().isEmpty() && DiningTableItemButton.isSelected()) {
             JOptionPane.showMessageDialog(null, "Please Enter a number of drawers");
         }
+         
+         JOptionPane.showMessageDialog(null, "Item Added");
 
         
     }//GEN-LAST:event_CreateItemMouseClicked
@@ -1162,6 +1200,8 @@ public class FurnitureGUI extends javax.swing.JFrame {
         }
 
         flag = true;
+        
+        JOptionPane.showMessageDialog(null, "Order Created");
     }//GEN-LAST:event_CreateOrderMouseClicked
 
     private void TotalPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TotalPriceActionPerformed
@@ -1176,6 +1216,11 @@ public class FurnitureGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         OrderFrame.setVisible(false);
     }//GEN-LAST:event_HomeOrderMouseClicked
+
+    private void DisplayOrdersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DisplayOrdersMouseClicked
+        // TODO add your handling code here:
+        SearchResults.setText("Orders: ");
+    }//GEN-LAST:event_DisplayOrdersMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1210,6 +1255,11 @@ public class FurnitureGUI extends javax.swing.JFrame {
                 new FurnitureGUI().setVisible(true);
             }
         });
+        
+        //Date.Date(day,month,year);
+        
+        
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1238,6 +1288,7 @@ public class FurnitureGUI extends javax.swing.JFrame {
     private javax.swing.JTextField Dimention3;
     private javax.swing.JRadioButton DiningTableItemButton;
     private javax.swing.JCheckBox DiningTableOrder;
+    private javax.swing.JButton DisplayOrders;
     private javax.swing.JFormattedTextField EnterInfo;
     private javax.swing.JButton HomeCustomer;
     private javax.swing.JButton HomeItem;
