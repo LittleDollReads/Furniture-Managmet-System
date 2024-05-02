@@ -9,7 +9,6 @@ package com.mycompany.projectmain;
  * @author marcu
  */
 public class Chair extends Furniture {
-    //Working on Dimensions
     public Chair(String materialType,String color,int price,double length,double width, double hieght){
         super(materialType,color,price,length,width,hieght);
     }
