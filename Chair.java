@@ -10,12 +10,12 @@ package object.project;
  */
 public class Chair extends Furniture {
     
-    public Dimentions ChairDimention;
+    public Dimensions ChairDimension;
     
     public Chair(String materialType,String color,int price,double length,double width, double height){
         super(materialType,color,price);
         
-        ChairDimention = new Dimentions(length,width,height);
+        ChairDimension = new Dimensions(length,width,height);
     }
     
     public Chair(){
