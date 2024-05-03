@@ -4,7 +4,7 @@
  */
 package object.project;
 
-import java.util.Scanner;
+
 
 /**
  *
@@ -17,7 +17,7 @@ public class Furniture {
     public int price;
     public Dimensions dimensions;
 
-    Scanner in = new Scanner(System.in);
+    
     
     public Furniture(String materialType, String color, int price,double height, double width, double length) {
         setMaterialType(materialType);
