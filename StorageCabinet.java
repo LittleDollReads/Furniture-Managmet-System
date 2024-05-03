@@ -22,7 +22,7 @@ public class StorageCabinet extends Furniture {
     }
     
     public StorageCabinet(String materialType,String color,int price,double length,double width, double height,int numofCabinet){
-        super(materialType,color,price);
+        super(materialType,color,price,length,width,height);
         
         StorageCabinetDimension = new Dimensions(length,width,height);
         
