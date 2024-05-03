@@ -12,18 +12,20 @@ package object.project;
 
 public class Bed extends Furniture {
     
-    public Dimentions BedDimention;
+    public Dimensions BedDimension;
     
     
     public Bed(String materialType,String color,int price,double length,double width, double height){
         super(materialType,color,price);
         
-        BedDimention = new Dimentions(length,width,height);
+        BedDimension = new Dimensions(length,width,height);
     }
     
     public Bed(){
         
         this("wood","brown",200, 38, 80,24);
+        
+        
     }
     
     /**
