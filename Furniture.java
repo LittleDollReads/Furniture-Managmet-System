@@ -19,7 +19,7 @@ public class Furniture {
 
     Scanner in = new Scanner(System.in);
     
-    public Furniture(String materialType, String color, int price) {
+    public Furniture(String materialType, String color, int price,double height, double width, double length) {
         setMaterialType(materialType);
         setColor(color);
         setPrice(price);
