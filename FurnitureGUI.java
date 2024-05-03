@@ -15,6 +15,13 @@ public class FurnitureGUI extends javax.swing.JFrame {
     
     String customerName , day , month, year, streetNum, streetName, city, state , zipCode;
     
+    String customerNameOrder, yearOrder, monthOrder, dayOrder, totalPrice ;
+    
+    String materialType, color;
+    int price;
+    double length, width, height;
+    
+    int numofCabinet, chairList;
     
     
     /**
@@ -321,7 +328,7 @@ public class FurnitureGUI extends javax.swing.JFrame {
 
         jLabel17.setText("Price:");
 
-        jLabel18.setText("List of Chairs:");
+        jLabel18.setText("Number of Chairs:");
 
         jLabel19.setText("Number of Drawers:");
 
@@ -1072,6 +1079,7 @@ public class FurnitureGUI extends javax.swing.JFrame {
             NumberOfDrawers.setText("");
             
             
+            
 
         }
     }//GEN-LAST:event_StorageCabinateItemButtonItemStateChanged
@@ -1112,6 +1120,87 @@ public class FurnitureGUI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Please Enter a number of drawers");
         }
          
+         /**String materialType, color;
+            int price;
+            double length, width, height;
+            **/
+         
+         int priceInt = Integer.parseInt(Price.getText());
+         double lengthDouble = Double.parseDouble(Dimention1.getText());
+         double widthDouble = Double.parseDouble(Dimention2.getText());
+         double heightDouble = Double.parseDouble(Dimention3.getText());
+         int numofCabinetInt = Integer.parseInt(NumberOfDrawers.getText());
+         int numofChairsInt = Integer.parseInt(ChairsList.getText());
+
+         
+        if (ChairItemButton.isSelected() ) {
+             
+             materialType = MaterialType.getText();
+             color = Color.getText();
+             price = priceInt;
+             length = lengthDouble;
+             width = widthDouble;
+             height = heightDouble;
+            
+            
+             Chair chair = new Chair(materialType, color, price, length, width, height); 
+        }
+        
+        if (SofaItemButton.isSelected() ) {
+             
+             materialType = MaterialType.getText();
+             color = Color.getText();
+             price = priceInt;
+             length = lengthDouble;
+             width = widthDouble;
+             height = heightDouble;
+            
+             
+             Sofa sofa = new Sofa(materialType, color, price, length, width, height); 
+        }
+        
+        if (BedItemButton.isSelected() ) {
+             
+             materialType = MaterialType.getText();
+             color = Color.getText();
+             price = priceInt;
+             length = lengthDouble;
+             width = widthDouble;
+             height = heightDouble;
+            
+             
+             Bed bed = new Bed(materialType, color, price, length, width, height); 
+        }
+        
+        if (StorageCabinateItemButton.isSelected() ) {
+             
+             materialType = MaterialType.getText();
+             color = Color.getText();
+             price = priceInt;
+             length = lengthDouble;
+             width = widthDouble;
+             height = heightDouble;
+             numofCabinet = numofCabinetInt;
+            
+             
+             StorageCabinet storageCabinet = new StorageCabinet(materialType, color, price, length, width, height,numofCabinet); 
+        }
+        
+        if (DiningTableItemButton.isSelected() ) {
+             
+             materialType = MaterialType.getText();
+             color = Color.getText();
+             price = priceInt;
+             length = lengthDouble;
+             width = widthDouble;
+             height = heightDouble;
+             chairList = numofChairsInt ;
+            
+             DiningTable diningTable = new DiningTable(materialType, color, price, length, width, height,chairList); 
+        }
+
+        
+         
          JOptionPane.showMessageDialog(null, "Item Added");
 
         
@@ -1124,32 +1213,40 @@ public class FurnitureGUI extends javax.swing.JFrame {
 
     private void CreateOrderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CreateOrderMouseClicked
         // TODO add your handling code here:
+        
+        
+
 
         if (CustomerNameOrder.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please Enter a Customer Name");
-
+        } else {
+            customerNameOrder = CustomerNameOrder.getText();
         }
 
         if (DayOrder.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please Enter a Day");
-
+        } else {
+            dayOrder=DayOrder.getText();
         }
 
         if (MonthOrder.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please Enter a Month");
-
+        } else {
+            monthOrder=MonthOrder.getText();
         }
 
         if (YearOrder.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please Enter a Year");
-
+        } else {
+            yearOrder = YearOrder.getText();
         }
 
         if (TotalPrice.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please Enter a price");
+        } else {
+            totalPrice = TotalPrice.getText();
         }
 
-        String yearOrder=YearOrder.getText(), monthOrder=MonthOrder.getText(), dayOrder=DayOrder.getText() ;
 
         boolean flag = true;
 
@@ -1200,6 +1297,13 @@ public class FurnitureGUI extends javax.swing.JFrame {
         }
 
         flag = true;
+        
+        
+        //if (ChairOrder.getSelectedObjects().equals(true)) {
+            //items += chair;
+        //}
+        
+        //Order order = new Order(customerNameOrder, dayOrder, monthOrder, yearOrder, items);
         
         JOptionPane.showMessageDialog(null, "Order Created");
     }//GEN-LAST:event_CreateOrderMouseClicked
