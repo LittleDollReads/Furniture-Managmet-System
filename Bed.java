@@ -16,7 +16,7 @@ public class Bed extends Furniture {
     
     
     public Bed(String materialType,String color,int price,double length,double width, double height){
-        super(materialType,color,price);
+        super(materialType,color,price,length,width,height);
         
         BedDimension = new Dimensions(length,width,height);
     }
