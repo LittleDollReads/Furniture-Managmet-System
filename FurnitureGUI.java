@@ -5,6 +5,7 @@
 package object.project;
 
 import javax.swing.JOptionPane;
+import java.util.Arrays;
 
 /**
  *
@@ -16,6 +17,10 @@ public class FurnitureGUI extends javax.swing.JFrame {
     String customerName , day , month, year, streetNum, streetName, city, state , zipCode;
     
     String customerNameOrder, yearOrder, monthOrder, dayOrder, totalPrice ;
+    
+    int i =0;
+        
+    Customer[] CustomerList = new Customer[i];
     
     String materialType, color;
     int price;
@@ -192,30 +197,30 @@ public class FurnitureGUI extends javax.swing.JFrame {
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(CustomerFrameLayout.createSequentialGroup()
                                 .addGap(6, 6, 6)
-                                .addGroup(CustomerFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, CustomerFrameLayout.createSequentialGroup()
-                                        .addComponent(jLabel9)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(Day, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(Month, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(CustomerFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(CustomerFrameLayout.createSequentialGroup()
                                         .addGroup(CustomerFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel7)
                                             .addComponent(jLabel8))
                                         .addGap(18, 18, 18)
-                                        .addComponent(CustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(Year, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(CustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(CustomerFrameLayout.createSequentialGroup()
+                                        .addComponent(jLabel9)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(Day, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(Month, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(Year, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addGroup(CustomerFrameLayout.createSequentialGroup()
                         .addGap(29, 29, 29)
-                        .addGroup(CustomerFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(CreateCustomer)
-                            .addComponent(StreetName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(StreetNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(City, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(State, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ZipCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(CustomerFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(CreateCustomer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(StreetNumber)
+                            .addComponent(StreetName)
+                            .addComponent(City)
+                            .addComponent(State)
+                            .addComponent(ZipCode))
                         .addGap(64, 64, 64)
                         .addGroup(CustomerFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(HomeCustomer)
@@ -793,21 +798,26 @@ public class FurnitureGUI extends javax.swing.JFrame {
 
     private void SearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SearchMouseClicked
         // TODO add your handling code here:
+        
+        SearchResults.setText("Search Results for: " + EnterInfo.getText() + "\n");
+        
         if (CustomerSearch.isSelected() ) {
+            /**
+            if(EnterInfo.getText().contentEquals(customerName)) {
+                SearchResults.setText(String.valueOf(CustomerList[i]));
+            }**/
             
         }
         
         if (ItemSearch.isSelected() ) {
-            System.out.print("item");
-            //EnterInfo.setText("Enter Item Name");
+            
         }
         
         if (OrderSearch.isSelected() ) {
-            System.out.print("order");
-            //EnterInfo.setText("Enter Customer Name");
+            
         }
         
-        SearchResults.setText("Search Results for: " + EnterInfo.getText() + "\n");
+        //SearchResults.setText("Search Results for: " + EnterInfo.getText() + "\n");
         
     }//GEN-LAST:event_SearchMouseClicked
 
@@ -871,6 +881,7 @@ public class FurnitureGUI extends javax.swing.JFrame {
 
     private void CreateCustomerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CreateCustomerMouseClicked
         
+        i=0;
         
         //verify that text is entered into all spots
         
@@ -1030,7 +1041,10 @@ public class FurnitureGUI extends javax.swing.JFrame {
         
         Customer customer = new Customer(customerName, dayInt, monthInt, yearInt, streetNumInt, streetName, city, state, zipCodeInt);
         
-        //have this part actually create a customer with the displayed information
+        while (i <1) {
+            CustomerList[i] = customer;
+            i +=1; 
+        }
         
         
     }//GEN-LAST:event_CreateCustomerMouseClicked
@@ -1038,45 +1052,45 @@ public class FurnitureGUI extends javax.swing.JFrame {
     private void ChairItemButtonItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ChairItemButtonItemStateChanged
         if (ChairItemButton.isSelected() ) {
             ChairsList.setEditable(false);
-            ChairsList.setText("N/A");
+           // ChairsList.setText("N/A");
             NumberOfDrawers.setEditable(false);
-            NumberOfDrawers.setText("N/A");
+            //NumberOfDrawers.setText("N/A");
         }
     }//GEN-LAST:event_ChairItemButtonItemStateChanged
 
     private void SofaItemButtonItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_SofaItemButtonItemStateChanged
         if (SofaItemButton.isSelected() ) {
             ChairsList.setEditable(false);
-            ChairsList.setText("N/A");
+           // ChairsList.setText("N/A");
              NumberOfDrawers.setEditable(false);
-             NumberOfDrawers.setText("N/A");
+           //  NumberOfDrawers.setText("N/A");
         }
     }//GEN-LAST:event_SofaItemButtonItemStateChanged
 
     private void DiningTableItemButtonItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_DiningTableItemButtonItemStateChanged
         if(DiningTableItemButton.isSelected()) {
             ChairsList.setEditable(true);
-            ChairsList.setText("");
+           // ChairsList.setText("");
             NumberOfDrawers.setEditable(false);
-            NumberOfDrawers.setText("N/A");
+           // NumberOfDrawers.setText("N/A");
         }
     }//GEN-LAST:event_DiningTableItemButtonItemStateChanged
 
     private void BedItemButtonItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_BedItemButtonItemStateChanged
         if (BedItemButton.isSelected() ) {
             ChairsList.setEditable(false);
-            ChairsList.setText("N/A");
+           // ChairsList.setText("N/A");
             NumberOfDrawers.setEditable(false);
-            NumberOfDrawers.setText("N/A");
+           // NumberOfDrawers.setText("N/A");
         }
     }//GEN-LAST:event_BedItemButtonItemStateChanged
 
     private void StorageCabinateItemButtonItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_StorageCabinateItemButtonItemStateChanged
         if (StorageCabinateItemButton.isSelected() ) {
             ChairsList.setEditable(false);
-            ChairsList.setText("N/A");
+            //ChairsList.setText("N/A");
             NumberOfDrawers.setEditable(true);
-            NumberOfDrawers.setText("");
+            //NumberOfDrawers.setText("");
             
             
             
@@ -1129,8 +1143,8 @@ public class FurnitureGUI extends javax.swing.JFrame {
          double lengthDouble = Double.parseDouble(Dimention1.getText());
          double widthDouble = Double.parseDouble(Dimention2.getText());
          double heightDouble = Double.parseDouble(Dimention3.getText());
-         int numofCabinetInt = Integer.parseInt(NumberOfDrawers.getText());
-         int numofChairsInt = Integer.parseInt(ChairsList.getText());
+         //int numofCabinetInt = Integer.parseInt(NumberOfDrawers.getText());
+         //int numofChairsInt = Integer.parseInt(ChairsList.getText());
 
          
         if (ChairItemButton.isSelected() ) {
@@ -1141,6 +1155,8 @@ public class FurnitureGUI extends javax.swing.JFrame {
              length = lengthDouble;
              width = widthDouble;
              height = heightDouble;
+             
+             
             
             
              Chair chair = new Chair(materialType, color, price, length, width, height); 
@@ -1173,6 +1189,9 @@ public class FurnitureGUI extends javax.swing.JFrame {
         }
         
         if (StorageCabinateItemButton.isSelected() ) {
+            
+            int numofCabinetInt = Integer.parseInt(NumberOfDrawers.getText());
+            
              
              materialType = MaterialType.getText();
              color = Color.getText();
@@ -1187,6 +1206,9 @@ public class FurnitureGUI extends javax.swing.JFrame {
         }
         
         if (DiningTableItemButton.isSelected() ) {
+            
+            
+            int numofChairsInt = Integer.parseInt(ChairsList.getText());
              
              materialType = MaterialType.getText();
              color = Color.getText();
@@ -1215,8 +1237,6 @@ public class FurnitureGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         
-
-
         if (CustomerNameOrder.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please Enter a Customer Name");
         } else {
