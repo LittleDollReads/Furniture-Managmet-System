@@ -24,37 +24,37 @@
                               <Component id="jLabel5" min="-2" pref="327" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="Day" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="Month" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="CustomerName" min="-2" max="-2" attributes="0"/>
+                                          <Component id="CustomerName" min="-2" pref="130" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="Day" min="-2" pref="70" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="Month" min="-2" pref="80" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="Year" min="-2" pref="78" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="Year" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="CreateCustomer" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="StreetName" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="StreetNumber" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="City" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="State" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="ZipCode" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="CreateCustomer" alignment="0" max="32767" attributes="0"/>
+                              <Component id="StreetNumber" alignment="0" max="32767" attributes="0"/>
+                              <Component id="StreetName" alignment="0" max="32767" attributes="0"/>
+                              <Component id="City" alignment="0" max="32767" attributes="0"/>
+                              <Component id="State" alignment="0" max="32767" attributes="0"/>
+                              <Component id="ZipCode" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -470,7 +470,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel18">
           <Properties>
-            <Property name="text" type="java.lang.String" value="List of Chairs:"/>
+            <Property name="text" type="java.lang.String" value="Number of Chairs:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel19">
@@ -781,6 +781,11 @@
                       <Component id="jScrollPane1" min="-2" pref="273" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
+                      <Component id="DisplayOrders" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
               </Group>
           </Group>
       </Group>
@@ -814,7 +819,10 @@
                   <Component id="jScrollPane1" min="-2" pref="149" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="21" max="32767" attributes="0"/>
-              <Component id="Search" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="Search" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="DisplayOrders" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -924,6 +932,14 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Enter Information"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="DisplayOrders">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Display Orders"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="DisplayOrdersMouseClicked"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
